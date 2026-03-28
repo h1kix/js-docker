@@ -12,7 +12,7 @@
       "prebuild": "rm -rf dist",
       "build": "webpack",
       "pretest": "npm run migrate:undo && npm run migrate",
-      "test": "jest --verbose --runInBand",
+      "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --verbose --runInBand",
       "prestart": "npm run migrate",
       "start": "fastify start -a 0.0.0.0 -p 8080 server/plugin.js -l debug -P -o",
       "predev": "npm run migrate",
